@@ -13,8 +13,7 @@ from typing import List
 
 def maxSubArray(nums: List[int]) -> int:
     # Strategy:
-    # Calculate running sum. If running sum is negative, move left and right
-    # Otherwise move right
+    # Calculate running sum. If running sum is negative, make running sum 0
     # -2 1 -2 4 3 5 6 1 5
 
     N = len(nums)
