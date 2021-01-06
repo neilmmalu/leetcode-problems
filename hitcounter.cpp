@@ -62,7 +62,7 @@ public:
     {
         while (!this->hits.empty())
         {
-            int diff = timestamp - his->hits.front().first;
+            int diff = timestamp - this->hits.front().first;
 
             if (diff >= 300)
             {
