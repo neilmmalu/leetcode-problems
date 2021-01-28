@@ -19,6 +19,8 @@ def coinChange(coins: List[int], amount: int) -> int:
         D.P:
         minCoins[i] = min(minCoins[i], minCoins[amount-coin] + 1)
 
+        random
+
         BFS:
         Add coin and total as tuple. Keep adding till all amounts visited.
     '''
