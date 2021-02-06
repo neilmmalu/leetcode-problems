@@ -29,13 +29,7 @@ def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 
     head = None
     while total:
-        newNode = ListNode(total % 10)
-        if not head:
-            head = newNode
-        else:
-            newNode.next = head
-            head = newNode
-
+        head = ListNode(total % 10, head)
         total //= 10
 
     return head if head else ListNode(0)
