@@ -23,18 +23,18 @@ class TreeNode:
 
 
 def verticalTraversal(root: TreeNode) -> List[List[int]]:
-    g = defaultdict(list)
+    cols = defaultdict(list)
     queue = [(root, 0)]
     while queue:
-        new = []
+        newQueue = []
         d = defaultdict(list)
-        for node, s in queue:
-            d[s].append(node.val)
+        for node, col in queue:
+            d[col].append(node.val)
             if node.left:
-                new += (node.left, s-1),
+                newQueue += (node.left, col-1),
             if node.right:
-                new += (node.right, s+1),
+                newQueue += (node.right, col+1),
         for i in d:
-            g[i].extend(sorted(d[i]))
-        queue = new
-    return [g[i] for i in sorted(g)]
+            cols[i].extend(sorted(d[i]))
+        queue = newQueue
+    return [cols[i] for i in sorted(cols)]
